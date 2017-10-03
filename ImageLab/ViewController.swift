@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 
+var statusBarIsHidden = true
 class ViewController: UIViewController   {
 
     //MARK: Class Properties
@@ -16,7 +17,7 @@ class ViewController: UIViewController   {
     var videoManager:VideoAnalgesic! = nil
     let pinchFilterIndex = 2
     var detector:CIDetector! = nil
-    let bridge = OpenCVBridge()
+    let bridge = OpenCVBridgeSubclass()
     
     //MARK: Outlets in view
     @IBOutlet weak var flashSlider: UISlider!
@@ -48,17 +49,21 @@ class ViewController: UIViewController   {
         if !videoManager.isRunning{
             videoManager.start()
         }
-    
+        
     }
+    
     
     //MARK: Process image output
     func processImage(inputImage:CIImage) -> CIImage{
         
         // detect faces
-        let f = getFaces(img: inputImage)
+        //let f = getFaces(img: inputImage)
         
         // if no faces, just return original image
-        if f.count == 0 { return inputImage }
+        //if f.count == 0 { return inputImage }
+        
+        //f[0] = CIFaceFeature();
+        //f[0].bounds = inputImage.extent
         
         var retImage = inputImage
         
@@ -80,7 +85,7 @@ class ViewController: UIViewController   {
         // or any bounds to only process a certain bounding region in OpenCV
         self.bridge.setTransforms(self.videoManager.transform)
         self.bridge.setImage(retImage,
-                             withBounds: f[0].bounds, // the first face bounds
+                             withBounds: inputImage.extent, // the first face bounds
                              andContext: self.videoManager.getCIContext())
         
         self.bridge.processImage()

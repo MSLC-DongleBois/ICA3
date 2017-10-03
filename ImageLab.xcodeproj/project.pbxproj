@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020CD4E81F83DAAB0094C9DF /* OpenCVBridgeSubclass.mm in Sources */ = {isa = PBXBuildFile; fileRef = 020CD4E71F83DAAB0094C9DF /* OpenCVBridgeSubclass.mm */; };
 		B650B31B1D8340F0000114A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650B31A1D8340F0000114A1 /* AppDelegate.swift */; };
 		B650B31D1D8340F0000114A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650B31C1D8340F0000114A1 /* ViewController.swift */; };
 		B650B3201D8340F0000114A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B650B31E1D8340F0000114A1 /* Main.storyboard */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020CD4E61F83DA570094C9DF /* OpenCVBridgeSubclass.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OpenCVBridgeSubclass.hh; sourceTree = "<group>"; };
+		020CD4E71F83DAAB0094C9DF /* OpenCVBridgeSubclass.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVBridgeSubclass.mm; sourceTree = "<group>"; };
 		B650B3171D8340F0000114A1 /* ImageLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B650B31A1D8340F0000114A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B650B31C1D8340F0000114A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 				B650B34D1D834D46000114A1 /* smu-campus.jpg */,
 				B67B72BE1D99D0AD008EDDE1 /* nose.xml */,
 				B6EF2FD91F7A906A00C33387 /* PrefixHeader.pch */,
+				020CD4E61F83DA570094C9DF /* OpenCVBridgeSubclass.hh */,
+				020CD4E71F83DAAB0094C9DF /* OpenCVBridgeSubclass.mm */,
 			);
 			path = ImageLab;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				B6E657991D95AA4500E75C60 /* VideoAnalgesic.swift in Sources */,
 				B650B31D1D8340F0000114A1 /* ViewController.swift in Sources */,
 				B650B31B1D8340F0000114A1 /* AppDelegate.swift in Sources */,
+				020CD4E81F83DAAB0094C9DF /* OpenCVBridgeSubclass.mm in Sources */,
 				B67B72BB1D996ADE008EDDE1 /* OpenCVBridge.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
