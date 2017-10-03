@@ -61,9 +61,7 @@ class ViewController: UIViewController   {
         
         // if no faces, just return original image
         //if f.count == 0 { return inputImage }
-        
-        //f[0] = CIFaceFeature();
-        //f[0].bounds = inputImage.extent
+
         
         var retImage = inputImage
         
@@ -85,10 +83,20 @@ class ViewController: UIViewController   {
         // or any bounds to only process a certain bounding region in OpenCV
         self.bridge.setTransforms(self.videoManager.transform)
         self.bridge.setImage(retImage,
-                             withBounds: inputImage.extent, // the first face bounds
+                             withBounds: retImage.extent, // the first face bounds
                              andContext: self.videoManager.getCIContext())
         
-        self.bridge.processImage()
+        var covered: Int32 = 0
+        
+        covered = self.bridge.processImage()
+        
+        if (covered == 1)
+        {
+            // if the camera is covered
+            NSLog("Camera Covered");
+            //self.videoManager.turnOnFlashwithLevel(0.5)
+            
+        }
         retImage = self.bridge.getImageComposite() // get back opencv processed part of the image (overlayed on original)
         
         return retImage
