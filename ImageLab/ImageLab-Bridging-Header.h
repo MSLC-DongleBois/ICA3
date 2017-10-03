@@ -3,3 +3,4 @@
 //
 
 #import "OpenCVBridge.hh"
+#import "OpenCVBridgeSubclass.hh"

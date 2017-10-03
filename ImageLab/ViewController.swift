@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 
+var statusBarIsHidden = true
 class ViewController: UIViewController   {
 
     //MARK: Class Properties
@@ -16,7 +17,7 @@ class ViewController: UIViewController   {
     var videoManager:VideoAnalgesic! = nil
     let pinchFilterIndex = 2
     var detector:CIDetector! = nil
-    let bridge = OpenCVBridge()
+    let bridge = OpenCVBridgeSubclass()
     
     //MARK: Outlets in view
     @IBOutlet weak var flashSlider: UISlider!
@@ -48,8 +49,9 @@ class ViewController: UIViewController   {
         if !videoManager.isRunning{
             videoManager.start()
         }
-    
+        
     }
+    
     
     //MARK: Process image output
     func processImage(inputImage:CIImage) -> CIImage{
@@ -59,6 +61,7 @@ class ViewController: UIViewController   {
         
         // if no faces, just return original image
         //if f.count == 0 { return inputImage }
+
         
         var retImage = inputImage
         
