@@ -1,2 +1,0 @@
-# ICA3
-OpenCV
